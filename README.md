@@ -1,6 +1,6 @@
 # Video Annotation Tool
 
-A user-friendly tool for annotating video subtitles by selecting speakers and listeners. Supports UTF-16 encoded SRT files and exports annotations to CSV files compatible with Excel.
+A user-friendly tool for annotating video subtitles by selecting speakers and listeners.
 
 ## Features
 
@@ -9,7 +9,6 @@ A user-friendly tool for annotating video subtitles by selecting speakers and li
 - **Automatic Pausing:** Pauses at the end of each subtitle for annotation.
 - **Manual Control:** Use the space bar to play/pause the video.
 - **Save and Load:** Save progress anytime and load existing annotations.
-- **UTF-16 Support:** Handles UTF-16 encoded SRT files.
 - **CSV Export:** Saves annotations in CSV with UTF-8 BOM for compatibility.
 
 ## Installation
@@ -57,5 +56,5 @@ Please ensure your code follows the project's coding standards and includes appr
 
 ## License
 
-This project is licensed under the GPL 3 License.
+This project is licensed under the GPL-3.0 License.
 
