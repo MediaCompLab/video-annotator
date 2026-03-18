@@ -1,12 +1,6 @@
 Monica,1
 Phoebe,2
-a,3
-re,4
-tere,5
-ere,6
-ere,7
-sdrgf,8
-rer,9
-43,0
-wewe,Q
-dfd,W
+Chandler,3
+Joey,4
+Ross,5
+Rachel,6
