@@ -1,11 +1,22 @@
 import sys
+import os
 from PySide6.QtWidgets import QApplication
+from PySide6.QtGui import QIcon
 
 from src.ui.setup_window import MainWindow
 from src.ui.annotator_window import VideoAnnotator
 
 def main():
     app = QApplication(sys.argv)
+    
+    # Set Logo based on dark/light mode
+    is_dark = app.palette().window().color().lightness() < 128
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    ciga_root = os.path.dirname(os.path.dirname(current_dir))
+    logo_path = os.path.join(ciga_root, "logo_white.png" if is_dark else "logo_black.png")
+    if os.path.exists(logo_path):
+        app.setWindowIcon(QIcon(logo_path))
+
     app.main_window = MainWindow()
     app.main_window.show()
 

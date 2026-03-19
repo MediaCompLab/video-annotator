@@ -28,7 +28,7 @@ class VideoAnnotator(QMainWindow):
 
     def __init__(self, video_file, srt_file, char_file, vat_file=""):
         super().__init__()
-        self.setWindowTitle("Video Annotator")
+        self.setWindowTitle("CIGA Annotator")
         
         self.app_settings = AppSettings()
 
@@ -81,9 +81,9 @@ class VideoAnnotator(QMainWindow):
         self.srt_file = srt_file
 
         if self.vat_file:
-            self.setWindowTitle(f"Video Annotator - {Path(self.vat_file).name}")
+            self.setWindowTitle(f"CIGA Annotator - {Path(self.vat_file).name}")
         else:
-            self.setWindowTitle(f"Video Annotator - {Path(self.srt_file).name}")
+            self.setWindowTitle(f"CIGA Annotator - {Path(self.srt_file).name}")
 
         self.subtitles = parse_srt(self.srt_file)
         if not self.subtitles:
@@ -321,6 +321,26 @@ class VideoAnnotator(QMainWindow):
         self.shortcuts_help_action.setShortcut(self.app_settings.get_hotkey("shortcuts_help"))
         self.shortcuts_help_action.triggered.connect(self.show_shortcuts_help)
         help_menu.addAction(self.shortcuts_help_action)
+
+        help_menu.addSeparator()
+        self.about_action = QAction("About CIGA", self)
+        self.about_action.triggered.connect(self.show_about_dialog)
+        help_menu.addAction(self.about_action)
+
+    def show_about_dialog(self):
+        msg_box = QMessageBox(self)
+        msg_box.setWindowTitle("About CIGA Annotator")
+        msg_box.setTextFormat(Qt.RichText)
+        msg_box.setText(
+            "<h3>CIGA: Character Interaction and Graph Analysis</h3>"
+            "<p><b>Video Annotator</b></p>"
+            "<p>A powerful tool for annotating video character interactions.</p>"
+            "<p><i>Developed by: <a href='http://mediacomplab.com'>Media Comprehension Lab</a></i></p>"
+            "<p>For more information, visit our <a href='https://github.com/MediaComprehensionLab/CIGA'>GitHub Repository</a>.</p>"
+            "<p>If you find CIGA useful, please consider citing our work:"
+            "<pre>@article{mcl2025ciga,\n  title={CIGA: Character Interaction and Graph Analysis for Video},\n  author={Media Comprehension Lab},\n  year={2025}\n}</pre></p>"
+        )
+        msg_box.exec()
 
     def setup_character_table(self, table):
         num_characters = len(self.characters)

@@ -9,7 +9,7 @@ class MainWindow(QMainWindow):
 
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Video Annotation Tool - Setup")
+        self.setWindowTitle("CIGA Annotator - Setup")
         self.resize(500, 250)
 
         self.video_file = ""

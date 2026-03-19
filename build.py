@@ -6,11 +6,11 @@ import os
 # Clean previous builds to avoid cache poisoning
 if os.path.exists('build'): shutil.rmtree('build')
 if os.path.exists('dist'): shutil.rmtree('dist')
-if os.path.exists('VideoAnnotator.spec'): os.remove('VideoAnnotator.spec')
+if os.path.exists('CIGA-Annotator.spec'): os.remove('CIGA-Annotator.spec')
 
 PyInstaller.__main__.run([
     'src/main.py',
-    '--name=VideoAnnotator',
+    '--name=CIGA-Annotator',
     '--windowed',
     '--onefile',
     '--clean',
