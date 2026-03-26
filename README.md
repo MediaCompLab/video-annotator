@@ -2,7 +2,7 @@
 
 **CIGA Annotator** is a subtitle-centric video annotation tool with an Aegisub-like layout and keyboard-first coding workflow, designed for annotating character interactions (Speaker, Listener, Target). 
 
-*This tool is part of the [CIGA (Character Interaction Graph Analysis)](https://github.com/MediaCompLab/ciga.git) project suite. The CSV exported from this annotator can be directly used in the CIGA library or CIGA GUI.*
+*This tool is part of the [CIGA (Character Interaction Graph Analysis)](https://github.com/MediaCompLab/ciga) project suite. The CSV exported from this annotator can be directly used in the CIGA library or [CIGA-GUI](https://github.com/MediaCompLab/ciga-gui).*
 
 ## Features
 
